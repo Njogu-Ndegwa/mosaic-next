@@ -2,10 +2,11 @@
 
 import { useItemSelection } from '@/components/utils/use-item-selection'
 import InvoicesTableItem from './invoices-table-item'
-
+import { StaticImageData } from 'next/image'
 export interface Invoice {
   id: number
   invoice: string
+  image: StaticImageData
   total: string
   status: string
   customer: string
@@ -25,7 +26,7 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
   return (
     <div className="bg-white dark:bg-gray-800 shadow-sm rounded-xl relative">
       <header className="px-5 py-4">
-        <h2 className="font-semibold text-gray-800 dark:text-gray-100">Inventory <span className="text-gray-400 dark:text-gray-500 font-medium">87</span></h2>
+        <h2 className="font-semibold text-gray-800 dark:text-gray-100">Items <span className="text-gray-400 dark:text-gray-500 font-medium">112</span></h2>
       </header>
       <div>
 
@@ -44,19 +45,19 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
                   </div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Inventory</div>
+                  <div className="font-semibold text-left">AccountNo</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Quantity</div>
+                  <div className="font-semibold text-left">InventoryID</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Status</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Location</div>
+                  <div className="font-semibold text-left">Fleet</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Type</div>
+                  <div className="font-semibold text-left">BatchNo</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Created on</div>

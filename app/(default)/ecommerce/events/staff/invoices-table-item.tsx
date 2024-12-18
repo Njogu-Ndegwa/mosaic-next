@@ -1,4 +1,4 @@
-import { Invoice } from './invoices-table'
+import { Invoice } from '../invoices-table'
 import { InvoicesProperties } from './invoices-properties'
 import Link from 'next/link'
 interface InvoicesTableItemProps {

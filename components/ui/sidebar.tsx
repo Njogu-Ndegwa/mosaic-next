@@ -192,7 +192,7 @@ export default function Sidebar({
                               <path d="M9 6.855A3.502 3.502 0 0 0 8 0a3.5 3.5 0 0 0-1 6.855v1.656L5.534 9.65a3.5 3.5 0 1 0 1.229 1.578L8 10.267l1.238.962a3.5 3.5 0 1 0 1.229-1.578L9 8.511V6.855ZM6.5 3.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm4.803 8.095c.005-.005.01-.01.013-.016l.012-.016a1.5 1.5 0 1 1-.025.032ZM3.5 11c.474 0 .897.22 1.171.563l.013.016.013.017A1.5 1.5 0 1 1 3.5 11Z" />
                             </svg>
                             <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              E-Commerce
+                              Inventory
                             </span>
                           </div>
                           {/* Icon */}
@@ -208,73 +208,17 @@ export default function Sidebar({
                       </a>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-8 mt-1 ${!open && 'hidden'}`}>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/customers">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Customers
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/orders">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Orders
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
+                        <li className="mb-1 last:mb-0">
                             <SidebarLink href="/ecommerce/invoices">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Invoices
+                                Inventory
                               </span>
                             </SidebarLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/shop">
+                            <SidebarLink href="/ecommerce/items">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Shop
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/shop-2">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Shop 2
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/product">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Single Product
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/cart">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Cart
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/cart-2">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Cart 2
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/cart-3">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Cart 3
-                              </span>
-                            </SidebarLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/ecommerce/pay">
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Pay
+                                Items
                               </span>
                             </SidebarLink>
                           </li>
@@ -284,8 +228,104 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Community */}
-              <SidebarLinkGroup open={segments.includes('community')}>
+              <SidebarLinkGroup open={segments.includes('tickets')}>
+                {(handleClick, open) => {
+                  return (
+                    <>
+                      <a
+                        href="#0"
+                        className={`block text-gray-800 dark:text-gray-100 truncate transition ${segments.includes('tickets') ? '' : 'hover:text-gray-900 dark:hover:text-white'
+                          }`}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          expandOnly ? setSidebarExpanded(true) : handleClick()
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                          <svg className={`shrink-0 fill-current ${segments.includes('tickets') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                              <path d="M12 1a1 1 0 1 0-2 0v2a3 3 0 0 0 3 3h2a1 1 0 1 0 0-2h-2a1 1 0 0 1-1-1V1ZM1 10a1 1 0 1 0 0 2h2a1 1 0 0 1 1 1v2a1 1 0 1 0 2 0v-2a3 3 0 0 0-3-3H1ZM5 0a1 1 0 0 1 1 1v2a3 3 0 0 1-3 3H1a1 1 0 0 1 0-2h2a1 1 0 0 0 1-1V1a1 1 0 0 1 1-1ZM12 13a1 1 0 0 1 1-1h2a1 1 0 1 0 0-2h-2a3 3 0 0 0-3 3v2a1 1 0 1 0 2 0v-2Z" />
+                            </svg>
+                            <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                              Tickets
+                            </span>
+                          </div>
+                          {/* Icon */}
+                          <div className="flex shrink-0 ml-2">
+                            <svg
+                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
+                              viewBox="0 0 12 12"
+                            >
+                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
+                        <ul className={`pl-8 mt-1 ${!open && 'hidden'}`}>
+                        <li className="mb-1 last:mb-0">
+                            <SidebarLink href="/tickets/tickets">
+                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                Tickets
+                              </span>
+                            </SidebarLink>
+                          </li>
+                        </ul>
+                      </div>
+                    </>
+                  )
+                }}
+              </SidebarLinkGroup>
+              <SidebarLinkGroup open={segments.includes('jobs')}>
+                {(handleClick, open) => {
+                  return (
+                    <>
+                      <a
+                        href="#0"
+                        className={`block text-gray-800 dark:text-gray-100 truncate transition ${segments.includes('events') ? '' : 'hover:text-gray-900 dark:hover:text-white'
+                          }`}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          expandOnly ? setSidebarExpanded(true) : handleClick()
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <svg className={`shrink-0 fill-current ${segments.includes('events') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                              <path d="M6.753 2.659a1 1 0 0 0-1.506-1.317L2.451 4.537l-.744-.744A1 1 0 1 0 .293 5.207l1.5 1.5a1 1 0 0 0 1.46-.048l3.5-4ZM6.753 10.659a1 1 0 1 0-1.506-1.317l-2.796 3.195-.744-.744a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.46-.049l3.5-4ZM8 4.5a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1ZM9 11.5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Z" />
+                            </svg>
+                            <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                              Events
+                            </span>
+                          </div>
+       
+                          <div className="flex shrink-0 ml-2">
+                            <svg
+                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
+                              viewBox="0 0 12 12"
+                            >
+                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
+                        <ul className={`pl-8 mt-1 ${!open && 'hidden'}`}>
+                          <li className="mb-1 last:mb-0">
+                            <SidebarLink href="/events/staff">
+                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                Staff
+                              </span>
+                            </SidebarLink>
+                          </li>
+                        </ul>
+                      </div>
+                    </>
+                  )
+                }}
+              </SidebarLinkGroup>
+      
+              {/* <SidebarLinkGroup open={segments.includes('community')}>
                 {(handleClick, open) => {
                   return (
                     <>
@@ -307,7 +347,7 @@ export default function Sidebar({
                               Community
                             </span>
                           </div>
-                          {/* Icon */}
+             
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -382,7 +422,7 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Finance */}
+       
               <SidebarLinkGroup open={segments.includes('finance')}>
                 {(handleClick, open) => {
                   return (
@@ -406,7 +446,7 @@ export default function Sidebar({
                               Finance
                             </span>
                           </div>
-                          {/* Icon */}
+               
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -439,7 +479,7 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Job Board */}
+       
               <SidebarLinkGroup open={segments.includes('jobs')}>
                 {(handleClick, open) => {
                   return (
@@ -462,7 +502,7 @@ export default function Sidebar({
                               Job Board
                             </span>
                           </div>
-                          {/* Icon */}
+       
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -502,7 +542,7 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Tasks */}
+   
               <SidebarLinkGroup open={segments.includes('tasks')}>
                 {(handleClick, open) => {
                   return (
@@ -525,7 +565,7 @@ export default function Sidebar({
                               Tasks
                             </span>
                           </div>
-                          {/* Icon */}
+              
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -558,7 +598,7 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Messages */}
+
               <li className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('messages') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}>
                 <SidebarLink href="/messages">
                   <div className="flex items-center justify-between">
@@ -571,14 +611,14 @@ export default function Sidebar({
                         Messages
                       </span>
                     </div>
-                    {/* Badge */}
+
                     <div className="flex flex-shrink-0 ml-2">
                       <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-violet-400 px-2 rounded">4</span>
                     </div>
                   </div>
                 </SidebarLink>
               </li>
-              {/* Inbox */}
+
               <li className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('inbox') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}>
                 <SidebarLink href="/inbox">
                   <div className="flex items-center">
@@ -589,7 +629,7 @@ export default function Sidebar({
                   </div>
                 </SidebarLink>
               </li>
-              {/* Calendar */}
+
               <li className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('calendar') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}>
                 <SidebarLink href="/calendar">
                   <div className="flex items-center">
@@ -603,7 +643,7 @@ export default function Sidebar({
                   </div>
                 </SidebarLink>
               </li>
-              {/* Campaigns */}
+ 
               <li className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('campaigns') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}>
                 <SidebarLink href="/campaigns">
                   <div className="flex items-center">
@@ -616,7 +656,7 @@ export default function Sidebar({
                   </div>
                 </SidebarLink>
               </li>
-              {/* Settings */}
+
               <SidebarLinkGroup open={segments.includes('settings')}>
                 {(handleClick, open) => {
                   return (
@@ -639,7 +679,7 @@ export default function Sidebar({
                               Settings
                             </span>
                           </div>
-                          {/* Icon */}
+  
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -700,7 +740,7 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Utility */}
+
               <SidebarLinkGroup open={segments.includes('utility')}>
                 {(handleClick, open) => {
                   return (
@@ -724,7 +764,7 @@ export default function Sidebar({
                               Utility
                             </span>
                           </div>
-                          {/* Icon */}
+     
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -780,7 +820,7 @@ export default function Sidebar({
               </SidebarLinkGroup>
             </ul>
           </div>
-          {/* More group */}
+
           <div>
             <h3 className="text-xs uppercase text-gray-400 dark:text-gray-500 font-semibold pl-3">
               <span className="hidden lg:block lg:sidebar-expanded:hidden 2xl:hidden text-center w-6" aria-hidden="true">
@@ -789,7 +829,7 @@ export default function Sidebar({
               <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">More</span>
             </h3>
             <ul className="mt-3">
-              {/* Authentication */}
+   
               <SidebarLinkGroup>
                 {(handleClick, open) => {
                   return (
@@ -811,7 +851,7 @@ export default function Sidebar({
                               Authentication
                             </span>
                           </div>
-                          {/* Icon */}
+              
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -851,7 +891,7 @@ export default function Sidebar({
                   )
                 }}
               </SidebarLinkGroup>
-              {/* Onboarding */}
+   
               <SidebarLinkGroup>
                 {(handleClick, open) => {
                   return (
@@ -873,7 +913,7 @@ export default function Sidebar({
                               Onboarding
                             </span>
                           </div>
-                          {/* Icon */}
+           
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -919,8 +959,8 @@ export default function Sidebar({
                     </>
                   )
                 }}
-              </SidebarLinkGroup>
-              {/* Components */}
+              </SidebarLinkGroup> */}
+
               <SidebarLinkGroup open={segments.includes('components-library')}>
                 {(handleClick, open) => {
                   return (
@@ -943,7 +983,7 @@ export default function Sidebar({
                               Components
                             </span>
                           </div>
-                          {/* Icon */}
+               
                           <div className="flex shrink-0 ml-2">
                             <svg
                               className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500 ${open && 'rotate-180'}`}
@@ -1052,7 +1092,7 @@ export default function Sidebar({
                     </>
                   )
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> 
             </ul>
           </div>
         </div>

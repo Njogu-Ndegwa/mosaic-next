@@ -33,9 +33,6 @@ export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelecte
         <div className="font-medium text-sky-600">{invoice.invoice}</div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className={`font-medium ${totalColor(invoice.status)}`}>{invoice.total}</div>
-      </td>
-      <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <div className={`inline-flex font-medium rounded-full text-center px-2.5 py-0.5 ${statusColor(invoice.status)}`}>{invoice.status}</div>
       </td >
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
@@ -53,7 +50,7 @@ export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelecte
         <div>{invoice.paiddate}</div>
       </td>
    
-      <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
+      {/* <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
         <div className=" flex space-x-1">
           <Link href="/ecommerce/invoices/add" className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400 rounded-full">
             <span className="sr-only">Edit</span>
@@ -75,7 +72,7 @@ export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelecte
             </svg>
           </button>
         </div>
-      </td>
+      </td> */}
     </tr>
   )
 }

@@ -36,11 +36,19 @@ export default function OrdersTableItem({ order, onCheckboxChange, isSelected }:
         <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
           <div className="flex items-center text-gray-800">
             <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full mr-2 sm:mr-3">
-              <Image className="ml-1" src={order.image} width={20} height={20} alt={order.order} />
+              <Image className="ml-1" src={order.image} width={30} height={30} alt={order.order} />
             </div>
             <div className="font-medium text-sky-600">{order.order}</div>
           </div>
         </td>
+        {/* <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+        <div className="flex items-center">
+          <div className="w-10 h-10 shrink-0 mr-2 sm:mr-3">
+            <Image className="rounded-full" src={order.image} width={20} height={20} alt={order.order} />
+          </div>
+          <div className="font-medium text-sky-600">{order.order}</div>
+        </div>
+      </td> */}
         <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
           <div>{order.date}</div>
         </td>

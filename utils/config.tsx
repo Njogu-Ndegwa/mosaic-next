@@ -37,4 +37,4 @@ export const CLOUDINARY_IMAGE_ENDPOINT =
   "https://res.cloudinary.com/oves/image/list/image.json";
 export const APP_VERSION = packageInfo.version;
 export const GRAFANA_API = PROXY_URL + "https://client-grafana.omnivoltaic.com";
-export const GRAFANA_API_KEY = process.env.REACT_APP_GRAFANA_API_KEY || "eyJrIjoieURLQ1hjaDd0bndGUGR0dTZvWmcwYWVTZ3oxaE1IbkwiLCJuIjoiVGVzdCIsImlkIjoxfQ==";
+// export const GRAFANA_API_KEY = process.env.REACT_APP_GRAFANA_API_KEY

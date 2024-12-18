@@ -10,6 +10,9 @@ import DateSelect from '@/components/date-select'
 import FilterButton from '@/components/dropdown-filter'
 import InvoicesTable from './invoices-table'
 import PaginationClassic from '@/components/pagination-classic'
+import Image01 from '@/public/images/A.jpg'
+import Image02 from '@/public/images/L300.jpg'
+import Image03 from '@/public/images/E-3_L_wspsx8.png'
 import Link from 'next/link'
 function InvoicesContent() {
 
@@ -17,101 +20,111 @@ function InvoicesContent() {
   const invoices = [
     {
       id: 0,
-      invoice: '#123567',
-      total: '100',
+      invoice: '851363352',
+      image: Image01,
+      total: '#123567',
       status: 'On Order',
-      customer: 'China',
-      type: 'Battery',
+      customer: 'Angaza C741',
+      type: 'L19024120001',
       issueddate: '22/07/2024',
       paiddate: '24/07/2024',
     },
     {
       id: 1,
-      invoice: '#779912',
-      total: '50',
+      invoice: '851363515',
+      image: Image02,
+      total: '#779912',
       status: 'Available',
-      customer: 'Warehouse A',
-      type: 'Ov L190',
+      customer: 'Angaza C741',
+      type: 'L05424120001',
       issueddate: '19/07/2024',
       paiddate: '20/07/2024',
     },
     {
       id: 2,
-      invoice: '#889924',
-      total: '95',
+      invoice: '851363344',
+      image: Image03,
+      total: '#889924',
       status: 'Damaged',
-      customer: 'Warehouse B',
-      type: 'E3 Bike',
+      customer: 'CHECH 7877',
+      type: 'B29024120001',
       issueddate: '17/07/2024',
       paiddate: '19/07/2024',
     },
     {
       id: 3,
-      invoice: '#897726',
-      total: '135',
+      invoice: '851363789',
+      image: Image02,
+      total: '#897726',
       status: 'Available',
-      customer: 'Warehouse D',
-      type: 'Battery',
+      customer: 'BHGJ 899',
+      type: 'L19024120003',
       issueddate: '04/07/2024',
       paiddate: '05/07/2024',
     },
     {
       id: 4,
-      invoice: '#123567',
-      total: '300',
+      invoice: '851363980',
+      image: Image01,
+      total: '#123567',
       status: 'In Transit',
-      customer: 'Indian Ocean',
-      type: 'F3 Bike',
+      customer: 'Angaza 3242',
+      type: 'BY9024120008',
       issueddate: '04/07/2024',
       paiddate: '06/07/2024',
     },
     {
       id: 5,
-      invoice: '#896644',
-      total: '50',
+      invoice: '851363234',
+      image: Image02,
+      total: '#896644',
       status: 'Available',
-      customer: 'Warehouse C',
-      type: 'Battery',
+      customer: 'Dod D423',
+      type: 'DL9024120003',
       issueddate: '04/07/2024',
       paiddate: '09/07/2024',
     },
     {
       id: 6,
-      invoice: '#136988',
-      total: '80',
+      invoice: '851363453',
+      image: Image01,
+      total: '#136988',
       status: 'Available',
-      customer: 'Warehouse B',
-      type: 'Ov L190',
+      customer: 'Angaza Y787',
+      type: 'DE9024120001',
       issueddate: '01/07/2024',
       paiddate: '01/07/2024',
     },
     {
       id: 7,
-      invoice: '#442206',
-      total: '130',
+      invoice: '851363543',
+      image: Image02,
+      total: '#442206',
       status: 'In Transit',
-      customer: 'Indian Ocean',
-      type: 'Battery',
+      customer: 'Angaza U877',
+      type: 'L19024120001',
       issueddate: '22/06/2024',
       paiddate: '23/06/2024',
     },
     {
       id: 8,
-      invoice: '#764321',
-      total: '95',
+      invoice: '851363879',
+      image: Image01,
+      total: '#764321',
       status: 'In Transit',
-      customer: 'Indian Ocean',
-      type: 'E3 Bike',
+      customer: 'Angaza D54',
+      type: 'SE9024120006',
       issueddate: '21/06/2024',
       paiddate: '29/06/2024',
     },
     {
       id: 9,
-      invoice: '#908764',
-      total: '100',
+      invoice: '851363897',
+      image: Image02,
+      total: '#908764',
       status: 'Damaged',
-      customer: 'Warehouse D',
-      type: 'Battery',
+      customer: 'Angaza 7641',
+      type: 'DE9024120001',
       issueddate: '17/06/2024',
       paiddate: '18/06/2024',
     }
@@ -124,36 +137,21 @@ function InvoicesContent() {
 
         {/* Left: Title */}
         <div className="mb-4 sm:mb-0">
-          <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">Inventories</h1>
+          <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">Items</h1>
         </div>
 
         {/* Right: Actions */}
         <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
           {/* Search form */}
-          <SearchForm placeholder="Search by inventory ID…" />
+          <SearchForm placeholder="Search by Account No…" />
           {/* Create invoice button */}
-          {/* <button className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">
+          <Link 
+          href="/ecommerce/items/add"
+          className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">
             <svg className="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">
               <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
             </svg>
-            <span className="max-xs:sr-only">Create Inventory</span>
-          </button> */}
-          <Link
-            href="/ecommerce/invoices/add" // Replace with your desired path
-            className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white flex items-center justify-center"
-          >
-            <svg
-              className="fill-current shrink-0 xs:hidden"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-            </svg>
-            <span className="max-xs:sr-only">Create Inventory</span>
+            <span className="max-xs:sr-only">Create Items</span>
           </Link>
         </div>
 
@@ -164,7 +162,7 @@ function InvoicesContent() {
 
         {/* Left side */}
         <div className="mb-4 sm:mb-0">
-          <ul className="flex flex-wrap -m-1">
+          {/* <ul className="flex flex-wrap -m-1">
             <li className="m-1">
               <button className="inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-transparent shadow-sm bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-800 transition">All <span className="ml-1 text-gray-400 dark:text-gray-500">87</span></button>
             </li>
@@ -180,7 +178,7 @@ function InvoicesContent() {
             <li className="m-1">
               <button className="inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 transition">In Transit <span className="ml-1 text-gray-400 dark:text-gray-500">20</span></button>
             </li>
-          </ul>
+          </ul> */}
         </div>
 
         {/* Right side */}
@@ -193,7 +191,7 @@ function InvoicesContent() {
           <FilterButton align="right" />
         </div>
 
-      </div>
+      </div>      
 
       {/* Table */}
       <InvoicesTable invoices={invoices} />
@@ -201,7 +199,7 @@ function InvoicesContent() {
       {/* Pagination */}
       <div className="mt-8">
         <PaginationClassic />
-      </div>
+      </div>    
     </div>
   )
 }

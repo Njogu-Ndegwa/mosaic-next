@@ -44,19 +44,16 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
                   </div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Inventory</div>
-                </th>
-                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Quantity</div>
+                  <div className="font-semibold text-left">Event</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Status</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Location</div>
+                  <div className="font-semibold text-left">Staff Name</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Type</div>
+                  <div className="font-semibold text-left">Action</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Created on</div>
@@ -65,9 +62,9 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
                   <div className="font-semibold text-left">Updated on</div>
                 </th>
 
-                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+                {/* <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Actions</div>
-                </th>
+                </th> */}
               </tr>
             </thead>
             {/* Table body */}

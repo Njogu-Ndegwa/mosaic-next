@@ -1,5 +1,6 @@
 import { Invoice } from './invoices-table'
 import { InvoicesProperties } from './invoices-properties'
+import Image from 'next/image'
 import Link from 'next/link'
 interface InvoicesTableItemProps {
   invoice: Invoice
@@ -9,7 +10,7 @@ interface InvoicesTableItemProps {
 
 export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelected }: InvoicesTableItemProps) {
 
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {        
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onCheckboxChange(invoice.id, e.target.checked)
   }
 
@@ -17,7 +18,7 @@ export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelecte
     totalColor,
     statusColor,
     typeIcon,
-  } = InvoicesProperties()  
+  } = InvoicesProperties()
 
   return (
     <tr>
@@ -30,16 +31,21 @@ export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelecte
         </div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className="font-medium text-sky-600">{invoice.invoice}</div>
+        <div className="flex items-center text-gray-800">
+          <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full mr-2 sm:mr-3">
+            <Image className="ml-1" src={invoice.image} width={30} height={30} alt={invoice.invoice} />
+          </div>
+          <div className="font-medium text-sky-600">{invoice.invoice}</div>
+        </div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className={`font-medium ${totalColor(invoice.status)}`}>{invoice.total}</div>
+        <div className="font-medium text-gray-800 dark:text-gray-100">{invoice.total}</div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <div className={`inline-flex font-medium rounded-full text-center px-2.5 py-0.5 ${statusColor(invoice.status)}`}>{invoice.status}</div>
       </td >
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className="font-medium text-gray-800 dark:text-gray-100">{invoice.customer}</div>
+        <div>{invoice.customer}</div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <div className="flex items-center">
@@ -52,10 +58,10 @@ export default function InvoicesTableItem({ invoice, onCheckboxChange, isSelecte
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <div>{invoice.paiddate}</div>
       </td>
-   
+
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
-        <div className=" flex space-x-1">
-          <Link href="/ecommerce/invoices/add" className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400 rounded-full">
+        <div className="flex space-x-1">
+          <Link href="/ecommerce/items/add" className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400 rounded-full">
             <span className="sr-only">Edit</span>
             <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32">
               <path d="M19.7 8.3c-.4-.4-1-.4-1.4 0l-10 10c-.2.2-.3.4-.3.7v4c0 .6.4 1 1 1h4c.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4l-4-4zM12.6 22H10v-2.6l6-6 2.6 2.6-6 6zm7.4-7.4L17.4 12l1.6-1.6 2.6 2.6-1.6 1.6z" />

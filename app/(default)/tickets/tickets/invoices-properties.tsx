@@ -1,14 +1,14 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState } from 'react'
 
 export const InvoicesProperties = () => {
-
+  const [descriptionOpen, setDescriptionOpen] = useState<boolean>(false)
   const totalColor = (status: string): string => {
     switch (status) {
-      case 'Paid':
+      case 'Low':
         return 'text-green-500';
-      case 'Due':
+      case 'Medium':
         return 'text-yellow-500';
-      case 'Overdue':
+      case 'High':
         return 'text-red-500';
       default:
         return 'text-gray-500';
@@ -17,9 +17,9 @@ export const InvoicesProperties = () => {
 
   const statusColor = (status: string): string => {
     switch (status) {
-      case 'Available':
+      case 'Resolved':
         return 'bg-green-500/20 text-green-700';
-      case 'In Transit':
+      case 'Assigned':
         return 'bg-yellow-500/20 text-yellow-700';
       case 'Damaged':
         return 'bg-red-500/20 text-red-700';
@@ -49,5 +49,7 @@ export const InvoicesProperties = () => {
     totalColor,
     statusColor,
     typeIcon,
+    setDescriptionOpen,
+    descriptionOpen
   }
 }

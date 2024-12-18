@@ -6,12 +6,14 @@ import InvoicesTableItem from './invoices-table-item'
 export interface Invoice {
   id: number
   invoice: string
-  total: string
+  priority: string
   status: string
-  customer: string
+  assignedTo: string
+  assignedBy: string
   issueddate: string
   paiddate: string
   type: string 
+  description: string
 }
 
 export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
@@ -25,7 +27,7 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
   return (
     <div className="bg-white dark:bg-gray-800 shadow-sm rounded-xl relative">
       <header className="px-5 py-4">
-        <h2 className="font-semibold text-gray-800 dark:text-gray-100">Inventory <span className="text-gray-400 dark:text-gray-500 font-medium">87</span></h2>
+        <h2 className="font-semibold text-gray-800 dark:text-gray-100">Tickets <span className="text-gray-400 dark:text-gray-500 font-medium">87</span></h2>
       </header>
       <div>
 
@@ -44,19 +46,22 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
                   </div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Inventory</div>
+                  <div className="font-semibold text-left">Ticket</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Quantity</div>
+                  <div className="font-semibold text-left">Priority</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Status</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Location</div>
+                  <div className="font-semibold text-left">Incident Type</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Type</div>
+                  <div className="font-semibold text-left">Assigned To</div>
+                </th>
+                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+                  <div className="font-semibold text-left">Assigned By</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Created on</div>
@@ -71,7 +76,7 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
               </tr>
             </thead>
             {/* Table body */}
-            <tbody className="text-sm divide-y divide-gray-100 dark:divide-gray-700/60">
+            {/* <tbody className="text-sm divide-y divide-gray-100 dark:divide-gray-700/60"> */}
               {invoices.map(invoice => (
                 <InvoicesTableItem
                   key={invoice.id}
@@ -79,7 +84,7 @@ export default function InvoicesTable({ invoices }: { invoices: Invoice[]}) {
                   onCheckboxChange={handleCheckboxChange}
                   isSelected={selectedItems.includes(invoice.id)} />
               ))}
-            </tbody>
+            {/* </tbody> */}
           </table>
 
         </div>

@@ -10,7 +10,7 @@ import FilterButton from '@/components/dropdown-filter'
 import OrdersTable from './orders-table'
 import PaginationClassic from '@/components/pagination-classic'
 
-import Image01 from '@/public/images/icon-01.svg'
+import Image01 from '@/public/images/A.jpg'
 import Image02 from '@/public/images/icon-02.svg'
 import Image03 from '@/public/images/icon-03.svg'
 

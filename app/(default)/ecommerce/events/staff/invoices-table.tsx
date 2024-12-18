@@ -1,7 +1,7 @@
 'use client'
 
 import { useItemSelection } from '@/components/utils/use-item-selection'
-import InvoicesTableItem from './invoices-table-item'
+import InvoicesTableItem from './staff/invoices-table-item'
 
 export interface Invoice {
   id: number
