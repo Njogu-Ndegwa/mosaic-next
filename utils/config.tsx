@@ -38,3 +38,4 @@ export const CLOUDINARY_IMAGE_ENDPOINT =
 export const APP_VERSION = packageInfo.version;
 export const GRAFANA_API = PROXY_URL + "https://client-grafana.omnivoltaic.com";
 // export const GRAFANA_API_KEY = process.env.REACT_APP_GRAFANA_API_KEY
+
